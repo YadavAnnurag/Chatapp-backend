@@ -5,7 +5,9 @@ type Client = {
   room: string;
 };
 
-const wss = new WebSocketServer({ port: 8080 });
+const PORT = Number(process.env.PORT) || 8080;
+const wss = new WebSocketServer({ port: PORT });
+
 
 let allSockets: Client[] = [];
 
